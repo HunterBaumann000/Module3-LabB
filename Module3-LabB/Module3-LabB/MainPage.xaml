@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Module3_LabB.MainPage">
+
+    <StackLayout>
+        <Frame BackgroundColor="#2196F3" Padding="24" CornerRadius="0">
+            <Label Text="Random Quiz" HorizontalTextAlignment="Center" TextColor="White" FontSize="36"/>
+        </Frame>
+
+        <!-- couldn't figure out how to integrate radio buttons in ListView, so I hard-coded the strings into the labels
+        
+        <ListView x:Name="QuestionView"
+            ItemsSource="{Binding Questions}">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <TextCell Text="{Binding QuestionText}" />
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        
+        -->
+
+        <StackLayout Margin="0,0,0,0" >
+
+            <StackLayout x:Name="QuestionsView"  Orientation="Vertical" IsVisible="true">
+                <StackLayout>
+                    <Label x:Name="Question_1_Text" Text="Seahorses have stomachs, which aid in the digestion of food." />
+                    <RadioButton x:Name="Question_1_True" Content="True" Value="1" />
+                    <RadioButton x:Name="Question_1_False" Content="False" Value="0"/>
+                </StackLayout>
+
+                <StackLayout>
+                    <Label x:Name="Question_2_Text" Text="The first living animal sent into space were fruit flies." />
+                    <RadioButton x:Name="Question_2_True" Content="True" Value="1" />
+                    <RadioButton x:Name="Question_2_False" Content="False" Value="0"/>
+                </StackLayout>
+
+                <StackLayout>
+                    <Label x:Name="Question_3_Text" Text="The Atlantic Ocean is the world's biggest ocean." />
+                    <RadioButton x:Name="Question_3_True" Content="True" Value="1" />
+                    <RadioButton x:Name="Question_3_False" Content="False" Value="0"/>
+                </StackLayout>
+
+                <StackLayout>
+                    <Label x:Name="Question_4_Text" Text="The United Kingdom is almost the same size as France." />
+                    <RadioButton x:Name="Question_4_True" Content="True" Value="1" />
+                    <RadioButton x:Name="Question_4_False" Content="False" Value="0"/>
+                </StackLayout>
+
+                <StackLayout>
+                    <Label x:Name="Question_5_Text" Text="In Scotland, the unicorn is their national animal." />
+                    <RadioButton x:Name="Question_5_True" Content="True" Value="1" />
+                    <RadioButton x:Name="Question_5_False" Content="False" Value="0"/>
+                </StackLayout>
+
+                <StackLayout>
+                    <Button Text="See my Results" Clicked="Handle_Clicked"></Button>
+                </StackLayout>
+            </StackLayout>
+
+            <StackLayout x:Name="CompletedView" Orientation="Vertical" IsVisible="false">
+                
+                <StackLayout>
+                    <Label Text="Seahorses have stomachs: False" />
+                    <Label Text="Fruit flies first animal sent into space: True" />
+                    <Label Text="Atlantic Ocean is the largest: False" />
+                    <Label Text="United Kingdom is almost the same size as France: False" />
+                    <Label Text="Scotland's nation animal is the unicorn: True"/>
+                </StackLayout>
+
+                <StackLayout Orientation="Horizontal">
+                    <Label FontSize="Large" Text="Answers Correct: " />
+                    <Label FontSize="Large" x:Name="CorrectAnswersCount" Text="" />
+                </StackLayout>
+            </StackLayout>
+
+
+        </StackLayout>
+    </StackLayout>
+
+</ContentPage>
